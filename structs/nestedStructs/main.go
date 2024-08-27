@@ -25,7 +25,7 @@ func test(mToSend messageToSend) {
 	fmt.Println()
 
 	if canSendMessage(mToSend) {
-		fmt.Println("....send!")
+		fmt.Println("....sent!")
 	} else {
 		fmt.Println("...can't send message")
 	}

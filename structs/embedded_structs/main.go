@@ -25,6 +25,18 @@ type user struct {
 	number int
 }
 
+type superWheel struct {
+	radius int
+	height int
+}
+
+type superCar struct {
+	model        string
+	chesisNumber int
+	frontWheel   superWheel
+	rearWheel    superWheel
+}
+
 func test(s sender) {
 	fmt.Println("Sender name: ", s.name)
 	fmt.Println("Sender number: ", s.number)
@@ -38,6 +50,18 @@ func main() {
 		car: car{
 			make:  "Minj ",
 			model: "classy X",
+		},
+	}
+	mySuperCar := superCar{
+		model:        "Ferrai",
+		chesisNumber: 324,
+		frontWheel: superWheel{
+			radius: 74,
+			height: 88,
+		},
+		rearWheel: superWheel{
+			radius: 63,
+			height: 78,
 		},
 	}
 	test(sender{
@@ -71,4 +95,5 @@ func main() {
 	})
 
 	fmt.Printf("%v %s %s ", myTruck.bedSize, myTruck.make, myTruck.model)
+	fmt.Printf("%s %v %v %v", mySuperCar.model, mySuperCar.chesisNumber, mySuperCar.frontWheel.radius, mySuperCar.rearWheel.height)
 }
